@@ -9,20 +9,22 @@ public class Trabajador {
     private String tipoDocumento;
     private String sexo;
     private String direccion;
-    private Cargo rango;
+    private Cargo cargo;
 
     public Trabajador() {
     }
 
-    public Trabajador(String codigo, String nombre, String apellido, String tipoDocumento, String sexo, String direccion, Cargo rango) {
+    public Trabajador(String codigo, String nombre, String apellido, String tipoDocumento, String sexo, String direccion, Cargo cargo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
         this.sexo = sexo;
         this.direccion = direccion;
-        this.rango = rango;
+        this.cargo = cargo;
     }
+
+    
 
     public String getCodigo() {
         return codigo;
@@ -72,13 +74,14 @@ public class Trabajador {
         this.direccion = direccion;
     }
 
-    public Cargo getRango() {
-        return rango;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public void setRango(Cargo rango) {
-        this.rango = rango;
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
+
     
     
 
