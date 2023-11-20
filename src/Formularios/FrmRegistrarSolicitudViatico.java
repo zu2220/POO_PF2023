@@ -100,6 +100,12 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cancel.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
 
+        tfBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfBusquedaActionPerformed(evt);
+            }
+        });
+
         jTListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -120,19 +126,19 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btnBuscar)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnNuevo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEliminar)
-                .addContainerGap(323, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -259,6 +265,7 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
         String fechaRe=tfFechaRetorno.getText();
         Viatico monto=new Viatico();
         monto.setMontoViatico(Double.parseDouble(tfMonto.getText()));
+        
        
         
         ArregloSolicitudViatico arreglo1=new ArregloSolicitudViatico(1);
@@ -288,7 +295,7 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
         for(int i=0; i<=dtm.getRowCount(); i++){
         if(tfBusqueda.equals(dtm.getValueAt(i, 0).toString())){
            for(int j=0; j<=dtm.getColumnCount(); j++){
-           jTListado2.addColumn((TableColumn)dtm.getColumnName(j));
+           
            }
            
             //dtm.getDataVector().elementAt(0).elementAt(6);
@@ -315,7 +322,11 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
     private void tfFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFechaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfFechaActionPerformed
-private void Limpiar() {
+
+    private void tfBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfBusquedaActionPerformed
+    private void Limpiar() {
         tfCodigoSolicitud.setText("");
         tfCodigoRemitente.setText("");
         tfFechaIda.setText("");
