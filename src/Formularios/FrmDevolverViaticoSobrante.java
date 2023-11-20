@@ -4,17 +4,16 @@
  */
 package Formularios;
 
-/**
- *
- * @author EDWIN
- */
-public class FrmDevolverViaticoSobrante extends javax.swing.JFrame {
+import Clases.Viatico;
+import javax.swing.table.DefaultTableModel;
 
-    /**
-     * Creates new form FrmDevolverViatico
-     */
+public class FrmDevolverViaticoSobrante extends javax.swing.JFrame {
+    private DefaultTableModel dtm;
+    private Object[] o=new Object[5];
+    
     public FrmDevolverViaticoSobrante() {
         initComponents();
+        dtm= (DefaultTableModel) jDevolucionesComisionado.getModel();
     }
 
     /**
@@ -26,21 +25,171 @@ public class FrmDevolverViaticoSobrante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tfCodigoComisionado = new javax.swing.JTextField();
+        tfCodigoDestinatario = new javax.swing.JTextField();
+        tfMontoViatico = new javax.swing.JTextField();
+        tfGastoTotal = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        btnCalcularDevolucionTesoreria = new javax.swing.JButton();
+        tfDevolucionTesoreria = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jDevolucionesComisionado = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        tfBusquedaDevolucionTeso = new javax.swing.JTextField();
+        btnEditarDevolucionTeso = new javax.swing.JButton();
+        btnEliminarDevolucionTeso = new javax.swing.JButton();
+        btnBuscarDevolucionTeso = new javax.swing.JButton();
+        btnNuevoDevolucionTeso = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Devolucion Viatico Sobrante a Tesorero\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Codigo Comisionado:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 120, -1));
+
+        jLabel2.setText("Monto Viatico:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
+
+        jLabel3.setText("Gasto Total:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
+
+        jLabel4.setText("Codigo Destinatario:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+        jPanel1.add(tfCodigoComisionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 150, -1));
+        jPanel1.add(tfCodigoDestinatario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 150, -1));
+        jPanel1.add(tfMontoViatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 150, -1));
+        jPanel1.add(tfGastoTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 150, -1));
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/save_as.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, -1, -1));
+
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cancel.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 90, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+
+        btnCalcularDevolucionTesoreria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/account_balances.png"))); // NOI18N
+        btnCalcularDevolucionTesoreria.setText("Calcular Devolucion a Tesoreria:");
+        btnCalcularDevolucionTesoreria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularDevolucionTesoreriaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCalcularDevolucionTesoreria, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 250, -1));
+        jPanel1.add(tfDevolucionTesoreria, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 120, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Devoluciones para Tesoreria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jDevolucionesComisionado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo de Comisionado", "Codigo Destinatario", "Monto Viatico", "Gasto Total", "Devolucion Tesoreria"
+            }
+        ));
+        jScrollPane1.setViewportView(jDevolucionesComisionado);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 83, 680, 284));
+
+        jLabel5.setText("Busqueda:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 75, 20));
+        jPanel2.add(tfBusquedaDevolucionTeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 176, 30));
+
+        btnEditarDevolucionTeso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/layer_edit.png"))); // NOI18N
+        btnEditarDevolucionTeso.setText("Editar");
+        jPanel2.add(btnEditarDevolucionTeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
+
+        btnEliminarDevolucionTeso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cancel.png"))); // NOI18N
+        btnEliminarDevolucionTeso.setText("Eliminar");
+        jPanel2.add(btnEliminarDevolucionTeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+
+        btnBuscarDevolucionTeso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/find.png"))); // NOI18N
+        btnBuscarDevolucionTeso.setText("Buscar");
+        jPanel2.add(btnBuscarDevolucionTeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
+
+        btnNuevoDevolucionTeso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/pencil_add.png"))); // NOI18N
+        btnNuevoDevolucionTeso.setText("Nuevo");
+        jPanel2.add(btnNuevoDevolucionTeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        String codCo=tfCodigoComisionado.getText();
+        String codDesti=tfCodigoDestinatario.getText();
+        String gasT=tfGastoTotal.getText();
+        String devTeso=tfDevolucionTesoreria.getText();
+        Viatico monto=new Viatico();
+        monto.setMontoViatico(Double.parseDouble(tfMontoViatico.getText()));
+
+        o[0]=codCo;
+        o[1]=codDesti;
+        o[2]=gasT;
+        o[3]=monto.getMontoViatico();
+        o[4]=devTeso;
+        dtm.addRow(o);
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        Limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnCalcularDevolucionTesoreriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularDevolucionTesoreriaActionPerformed
+        double monto, gasT, devCom;
+
+        monto=Double.parseDouble(tfMontoViatico.getText());
+        gasT=Double.parseDouble(tfGastoTotal.getText());
+
+        devCom=monto-gasT;
+
+        tfDevolucionTesoreria.setText(String.valueOf(devCom));
+    }//GEN-LAST:event_btnCalcularDevolucionTesoreriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +226,37 @@ public class FrmDevolverViaticoSobrante extends javax.swing.JFrame {
             }
         });
     }
+      private void Limpiar() {
+        tfCodigoComisionado.setText("");
+        tfCodigoDestinatario.setText("");
+        tfMontoViatico.setText("");
+        tfGastoTotal.setText("");
+        tfDevolucionTesoreria.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarDevolucionTeso;
+    private javax.swing.JButton btnCalcularDevolucionTesoreria;
+    private javax.swing.JButton btnEditarDevolucionTeso;
+    private javax.swing.JButton btnEliminarDevolucionTeso;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnNuevoDevolucionTeso;
+    private javax.swing.JTable jDevolucionesComisionado;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField tfBusquedaDevolucionTeso;
+    private javax.swing.JTextField tfCodigoComisionado;
+    private javax.swing.JTextField tfCodigoDestinatario;
+    private javax.swing.JTextField tfDevolucionTesoreria;
+    private javax.swing.JTextField tfGastoTotal;
+    private javax.swing.JTextField tfMontoViatico;
     // End of variables declaration//GEN-END:variables
 }

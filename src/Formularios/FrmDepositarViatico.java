@@ -46,7 +46,7 @@ public class FrmDepositarViatico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jMovimientos = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        tfBusquedaDesposito = new javax.swing.JTextField();
+        tfBusquedaDeposito = new javax.swing.JTextField();
         btnEditarDeposito = new javax.swing.JButton();
         btnEliminarDeposito = new javax.swing.JButton();
         btnBuscarDeposito = new javax.swing.JButton();
@@ -58,20 +58,20 @@ public class FrmDepositarViatico extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Codigo Tesorero:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 100, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 100, -1));
 
         jLabel2.setText("Codigo Solicitud de Viatico:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
         jLabel3.setText("Monto:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 
         jLabel4.setText("Codigo Destinatario:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
-        jPanel1.add(tfCodigoTesorero, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 150, -1));
-        jPanel1.add(tfCodigoDestinatario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 150, -1));
-        jPanel1.add(tfCodigoSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 150, -1));
-        jPanel1.add(tfMontoDeposisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 150, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+        jPanel1.add(tfCodigoTesorero, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 150, -1));
+        jPanel1.add(tfCodigoDestinatario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 150, -1));
+        jPanel1.add(tfCodigoSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 150, -1));
+        jPanel1.add(tfMontoDeposisto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 150, -1));
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/save_as.png"))); // NOI18N
         btnGuardar.setText("Guardar");
@@ -108,7 +108,7 @@ public class FrmDepositarViatico extends javax.swing.JFrame {
 
         jLabel5.setText("Busqueda:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 75, 20));
-        jPanel2.add(tfBusquedaDesposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 176, 30));
+        jPanel2.add(tfBusquedaDeposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 176, 30));
 
         btnEditarDeposito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/layer_edit.png"))); // NOI18N
         btnEditarDeposito.setText("Editar");
@@ -226,7 +226,7 @@ public class FrmDepositarViatico extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tfBusquedaDesposito;
+    private javax.swing.JTextField tfBusquedaDeposito;
     private javax.swing.JTextField tfCodigoDestinatario;
     private javax.swing.JTextField tfCodigoSolicitud;
     private javax.swing.JTextField tfCodigoTesorero;

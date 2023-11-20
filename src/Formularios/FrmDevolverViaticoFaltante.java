@@ -49,9 +49,9 @@ public class FrmDevolverViaticoFaltante extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jDevolucionesComisionado = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        tfBusquedaDesposito = new javax.swing.JTextField();
+        tfBusquedaDevolucionComi = new javax.swing.JTextField();
         btnEditarDevolucionComi = new javax.swing.JButton();
-        btnDevolucionComi = new javax.swing.JButton();
+        btnEliminarDevolucionComi = new javax.swing.JButton();
         btnBuscarDevolucionComi = new javax.swing.JButton();
         btnNuevoDevolucionComi = new javax.swing.JButton();
 
@@ -122,15 +122,15 @@ public class FrmDevolverViaticoFaltante extends javax.swing.JFrame {
 
         jLabel5.setText("Busqueda:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 75, 20));
-        jPanel2.add(tfBusquedaDesposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 176, 30));
+        jPanel2.add(tfBusquedaDevolucionComi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 176, 30));
 
         btnEditarDevolucionComi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/layer_edit.png"))); // NOI18N
         btnEditarDevolucionComi.setText("Editar");
         jPanel2.add(btnEditarDevolucionComi, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
 
-        btnDevolucionComi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cancel.png"))); // NOI18N
-        btnDevolucionComi.setText("Eliminar");
-        jPanel2.add(btnDevolucionComi, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+        btnEliminarDevolucionComi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cancel.png"))); // NOI18N
+        btnEliminarDevolucionComi.setText("Eliminar");
+        jPanel2.add(btnEliminarDevolucionComi, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
 
         btnBuscarDevolucionComi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/find.png"))); // NOI18N
         btnBuscarDevolucionComi.setText("Buscar");
@@ -242,8 +242,8 @@ public class FrmDevolverViaticoFaltante extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarDevolucionComi;
     private javax.swing.JButton btnCalcularDevolucionComisionado;
-    private javax.swing.JButton btnDevolucionComi;
     private javax.swing.JButton btnEditarDevolucionComi;
+    private javax.swing.JButton btnEliminarDevolucionComi;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnNuevoDevolucionComi;
@@ -257,7 +257,7 @@ public class FrmDevolverViaticoFaltante extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tfBusquedaDesposito;
+    private javax.swing.JTextField tfBusquedaDevolucionComi;
     private javax.swing.JTextField tfCodigoDestinatario;
     private javax.swing.JTextField tfCodigoTesorero;
     private javax.swing.JTextField tfDevolucionComisionado;
