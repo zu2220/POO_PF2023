@@ -99,13 +99,14 @@ public class FrmTrabajador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addGap(47, 47, 47)
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnNuevo)
@@ -119,17 +120,16 @@ public class FrmTrabajador extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnBuscar)
-                        .addComponent(btnNuevo)
-                        .addComponent(btnEditar)
-                        .addComponent(btnEliminar)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar)
+                    .addComponent(btnNuevo)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Listado de trabajadores", jPanel1);
@@ -167,7 +167,7 @@ public class FrmTrabajador extends javax.swing.JFrame {
 
         cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "No especificado", " " }));
         jPanel3.add(cbxSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 120, -1));
-        jPanel3.add(tfDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 240, 20));
+        jPanel3.add(tfDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 240, 30));
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/save_as.png"))); // NOI18N
         btnGuardar.setText("Guardar");
@@ -188,20 +188,20 @@ public class FrmTrabajador extends javax.swing.JFrame {
         jPanel3.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 100, 30));
 
         jLabel8.setText("Nombre de Cargo:");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, 30));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, 30));
 
         cbxNombreCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comisionado", "Encargado Administrativo", "Contador", "Tesorero", " ", " " }));
-        jPanel3.add(cbxNombreCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 130, -1));
+        jPanel3.add(cbxNombreCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 130, -1));
 
         jLabel9.setText("Tipo de Cargo:");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Nirmala UI", 1, 36)); // NOI18N
         jLabel10.setText("REGISTRO DE TRABAJADOR");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         cbxTipoCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jefe", "Operario", " ", " " }));
-        jPanel3.add(cbxTipoCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, -1, -1));
+        jPanel3.add(cbxTipoCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -264,7 +264,7 @@ public class FrmTrabajador extends javax.swing.JFrame {
         nomCargo.setNombreCargo(nombreCargo);
         nomCargo.setTipoCargo(tipoCargo);
         
-         o[0]=codT;
+        o[0]=codT;
         o[1]=nombre;
         o[2]=apellidos;
         o[3]=tipoDocumento;
