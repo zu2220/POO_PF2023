@@ -1,8 +1,8 @@
 
 package vista;
 
-import clases.Usuario;
-import controlador.cUsuario;
+import Clases.Usuario;
+import Controlador.cUsuario;
 import javax.swing.JOptionPane;
 
 /**
