@@ -7,24 +7,29 @@
 package Formularios;
 
 import Clases.SolicitudViatico;
-import Clases.Trabajador;
 import Clases.Viatico;
 import EstructuraDeDatos.*;
-import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
+
+import javax.swing.table.TableRowSorter;
+import javax.swing.RowFilter;
+
 
 public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
+    
+    TableRowSorter trsFiltro;
     
         
     
     private DefaultTableModel dtm;
     private Object[] o=new Object[7];
+    ArregloSolicitudViatico arreglo1=new ArregloSolicitudViatico();
     
-    private ArregloSolicitudViatico arraySV=new ArregloSolicitudViatico(1);
+    
+   // private ArregloSolicitudViatico arraySV=new ArregloSolicitudViatico(1);
      
-    private SolicitudViatico sv1=new SolicitudViatico();
+   // private SolicitudViatico sv1=new SolicitudViatico();
+    
     
     
     
@@ -76,7 +81,7 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Búsqueda:");
+        jLabel1.setText("Búsqueda de solicitud:");
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/find.png"))); // NOI18N
         btnBuscar.setText("Buscar");
@@ -126,11 +131,11 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
                 .addComponent(tfBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnNuevo)
@@ -256,30 +261,10 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
     }//GEN-LAST:event_tfCodigoSolicitudActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-        String codS=tfCodigoSolicitud.getText();
-        String codRe=tfCodigoRemitente.getText();
-        String fechaEnvio=tfFecha.getText();
-        String fechaIda=tfFechaIda.getText();
-        String tipoViaje=cbxTipoViaje.getSelectedItem().toString();
-        String fechaRe=tfFechaRetorno.getText();
-        Viatico monto=new Viatico();
-        monto.setMontoViatico(Double.parseDouble(tfMonto.getText()));
+     
+       CrearArregloSV();
         
-       
         
-        ArregloSolicitudViatico arreglo1=new ArregloSolicitudViatico(1);
-        SolicitudViatico s1=new SolicitudViatico(codS, codRe, fechaEnvio, fechaIda, fechaRe,tipoViaje,monto);
-        arreglo1.addSolicitudViatico(s1);
-        
-        o[0]=tfCodigoSolicitud.getText().trim();
-        o[1]=tfCodigoRemitente.getText().trim();
-        o[2]=tfFecha.getText();
-        o[3]=cbxTipoViaje.getSelectedItem().toString();
-        o[4]=tfFechaIda.getText();
-        o[5]=tfFechaRetorno.getText().trim();
-        o[6]=tfMonto.getText();
-        dtm.addRow(o);
         
       
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -290,18 +275,24 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
     }//GEN-LAST:event_jTListadoKeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        JTable jTListado2=new JTable();
+       // String cod=tfBusqueda.getText();
+       // int i=0;
+        
+        
         
         for(int i=0; i<=dtm.getRowCount(); i++){
-        if(tfBusqueda.equals(dtm.getValueAt(i, 0).toString())){
-           for(int j=0; j<=dtm.getColumnCount(); j++){
+           if(tfBusqueda.getText().equals(arreglo1.getSolicitudViaticoByIndex(i).getCodSolicitud())){
+               trsFiltro=new TableRowSorter(jTListado.getModel());
+               jTListado.setRowSorter(trsFiltro); 
+               trsFiltro.setRowFilter(RowFilter.regexFilter(tfBusqueda.getText(), 0));
+               break;
            
-           }
-           
-            //dtm.getDataVector().elementAt(0).elementAt(6);
-            
+          
+        } 
+       
+        //String bqd=tfBusqueda.getText();
+        
         }
-      }
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -400,6 +391,34 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
     private javax.swing.JTextField tfFechaRetorno;
     private javax.swing.JTextField tfMonto;
     // End of variables declaration//GEN-END:variables
+
+    private void CrearArregloSV() {
+        
+       
+        
+        
+        arreglo1.addSolicitudViatico(new SolicitudViatico(tfCodigoSolicitud.getText(), 
+        tfCodigoRemitente.getText(), tfFecha.getText(), tfFechaIda.getText(),
+        tfFechaRetorno.getText(),cbxTipoViaje.getSelectedItem().toString(),new Viatico(Double.parseDouble(tfMonto.getText()))));
+        
+       // System.out.println(arreglo1.getSolicitudViaticoByIndex(0).getFechaIda());
+        
+        o[0]=tfCodigoSolicitud.getText().trim();
+        //o[0]=arreglo1.getSolicitudViaticoByIndex(0).getCodSolicitud();
+        o[1]=tfCodigoRemitente.getText().trim();
+        //o[1]=arreglo1.getSolicitudViaticoByIndex(0).getCodRemitente();
+        o[2]=tfFecha.getText();
+        //o[2]=arreglo1.getSolicitudViaticoByIndex(0).getFechaSolicitud();
+        o[3]=cbxTipoViaje.getSelectedItem().toString();
+        //o[3]=arreglo1.getSolicitudViaticoByIndex(0).getTipoViaje();
+        o[4]=tfFechaIda.getText();
+        //o[4]=arreglo1.getSolicitudViaticoByIndex(0).getFechaIda();
+        o[5]=tfFechaRetorno.getText().trim();
+        //o[5]=arreglo1.getSolicitudViaticoByIndex(0).getFechaRetorno();
+        o[6]=tfMonto.getText();
+        //o[6]=arreglo1.getSolicitudViaticoByIndex(0).getMonto();
+        dtm.addRow(o);
+    }
 
     
 

@@ -1,10 +1,12 @@
 
 package Formularios;
 
-import Formularios.FrmRegistrarSolicitudViatico;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 public class FrmVerificacionSolicitudViatico extends javax.swing.JFrame {
+    private DefaultTableModel dtmVSV;
+    private Object [] vsv=new Object[5];
     
     public void setTablaVerificacion(JTable x){
         tablaVerificacion=x;
