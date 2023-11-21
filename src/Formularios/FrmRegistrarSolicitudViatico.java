@@ -23,7 +23,7 @@ public class FrmRegistrarSolicitudViatico extends javax.swing.JFrame {
     
     private DefaultTableModel dtm;
     private Object[] o=new Object[7];
-    ArregloSolicitudViatico arreglo1=new ArregloSolicitudViatico();
+    public ArregloSolicitudViatico arreglo1=new ArregloSolicitudViatico();
     
     
    // private ArregloSolicitudViatico arraySV=new ArregloSolicitudViatico(1);
